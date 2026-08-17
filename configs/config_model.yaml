@@ -1,0 +1,72 @@
+# Model names:
+# FHN --- FitzHugh_Nagumo_model
+# LV --- p53_dynamics_model
+# p53 --- p53_dynamics_model
+# WC --- Wilson_Cowan_model
+# ML --- Morris_Lecar model
+global_settings:
+  model: "FHN"
+  # varying parameter regime (true or false)
+  vary_parameter: false # true
+
+  # noise addition parameter (true or false)
+  noise: false
+
+models:
+  FHN: 
+    a: 0.7
+    b: 0.1 
+    Iext: 0.5 
+    x0: [1.0, 1.0]
+
+  LV:
+    alpha: 0.1
+    beta: 0.02
+    delta: 0.02
+    gamma: 0.4
+    x0: [10.0, 100.0]   
+  
+  p53:
+    a: 5 
+    b: 10 
+    c: 15 
+    d: 70 
+    "n": 2.4 
+    z: 2.1
+    tau1: 1 
+    tau2: 1 
+    m: 1.5 
+    r: 1 
+    x0: [5.0, 2.0]   
+  
+  WC:
+    C: 0.8 
+    tau: 1.9 
+    I: 1
+    k1: 47.71 
+    k2: 17.81 
+    k3: 32.63
+    k4: -0.55 
+    k5: 26 
+    k6: 0.92 
+    k7: 1.35 
+    k8: 1.03 
+    x0: [0.0, 0.0]
+
+  ML:
+    C: 10 # 10 
+    Iext: 150 #0.1 
+    Isyn: 0 #0 
+    gL: 2.0 #0.5 
+    gCa: 4.4 #1.33 
+    gK: 8.0 #2.0
+    uL:  -60.0 #-0.5
+    uCa: 120.0 #1
+    uK: -84.0 #-1.5 
+    v1: -1.2 #-0.01 
+    v2: 18.0 #0.15 
+    v3: 2.0 #0.1
+    v4: 30.0 #0.145 
+    phi: 0.04 #0.1 
+    x0: [0.0, 0.0]   
+                       

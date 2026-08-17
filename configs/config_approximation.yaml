@@ -1,0 +1,14 @@
+# Model names:
+# FHN --- FitzHugh_Nagumo_model
+# LV --- p53_dynamics_model
+# p53 --- p53_dynamics_model
+# WC --- Wilson_Cowan_model
+# ML --- Morris_Lecar model
+global_settings:
+ 
+  # parallel_calculation mode: true or false (bool)
+  parallel_calculations: true
+
+  # numbers of parallel processes: (int)
+  parallel_processes: 9
+    

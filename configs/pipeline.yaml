@@ -1,0 +1,23 @@
+# Список этапов, которые нужно запустить (порядок важен)
+stages:
+  - deriv_calculation
+  - phi_func_approx
+  - optimal_model_identification
+
+# Параметры для каждого этапа
+deriv_calculation:
+  config_path: "configs/config_derivatives.yaml"
+
+phi_func_approx:
+  config_path: "configs/config_approximation.yaml"
+
+optimal_model_identification:
+  config_path: "configs/config_selection.yaml"
+
+emperical_threshold:
+  config_path: "configs/config_selection.yaml"
+
+# Run regimes: number (one experiment): (int)
+# Run regimes: [first_number, last_number] (range of experiments): (List)
+# Run regimes: "all" (all experiments): (str)
+experiment_number: "all"

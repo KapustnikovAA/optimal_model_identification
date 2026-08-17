@@ -1,0 +1,48 @@
+
+global_settings:
+
+  # parallel_calculation mode: true or false (bool)
+  parallel_calculations: true
+
+  # numbers of parallel processes: (int)
+  parallel_processes: 9
+  
+  # julia run mode: true or false (bool)
+  julia_mode: true
+
+  # THE PATH TO THE JULIA EXECUTABLE:
+  # On Linux, it's usually just "julia" or the full path: path or false (srt or bool)
+  julia_path: "/home/antonkapustnikov/julia-1.11.4/julia-1.11.4/bin/julia"
+
+  # if julia_mode == false or julia_path == false -> full python calculations
+
+# for unknown model use only odd number
+window_size:
+  FHN:
+    "noise_sigma_0": 5
+    "noise_sigma_0.001": 91
+    "noise_sigma_0.01": 275
+    "noise_sigma_0.1": 827
+  LV:
+    "noise_sigma_0": 5
+    "noise_sigma_0.001": 1021
+    "noise_sigma_0.01": 1021
+    "noise_sigma_0.1": 1021
+  p53:
+    "noise_sigma_0": 5
+    "noise_sigma_0.001": 21
+    "noise_sigma_0.01": 21
+    "noise_sigma_0.1": 51
+  WC:
+    "noise_sigma_0": 5
+    "noise_sigma_0.001": 61
+    "noise_sigma_0.01": 121
+    "noise_sigma_0.1": 261
+  ML:
+    "noise_sigma_0": 5
+    "noise_sigma_0.001": 1391
+    "noise_sigma_0.01": 4177
+    "noise_sigma_0.1": 4177
+  "unknown":
+    "noise_sigma_unknown": 12345
+    
