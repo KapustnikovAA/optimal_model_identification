@@ -12,7 +12,7 @@ global_settings:
 
   # THE PATH TO THE JULIA EXECUTABLE:
   # On Linux, it's usually just "julia" or the full path: path or false (srt or bool)
-  julia_path: "/home/antonkapustnikov/julia-1.11.4/julia-1.11.4/bin/julia"
+  julia_path: false
 
   # if julia_mode == false or julia_path == false -> full python calculations
 
