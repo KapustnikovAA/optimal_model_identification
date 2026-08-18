@@ -1,0 +1,83 @@
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | Code run started
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | experiment_nimber: 161
+config:{'global_settings': {'parallel_calculations': True, 'parallel_processes': 9, 'experiment_number': [161, 180]}}
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | u_max: 0.18144977835356335
+u_min:-0.43528485896353836
+ig: 0.5352848589635384
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | u_max: 0.18144977835356335
+u_min:-0.43528485896353836
+ig: 0.5352848589635384
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | u_max: 0.18144977835356335
+u_min:-0.43528485896353836
+ig: 0.5352848589635384
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | u_max: 0.18144977835356335
+u_min:-0.43528485896353836
+ig: 0.5352848589635384
+2026-08-12 21:15:06 | scripts.phi_function_approximation | INFO | u_max: 0.18144977835356335
+u_min:-0.43528485896353836
+ig: 0.5352848589635384
+2026-08-12 23:46:23 | scripts.phi_function_approximation | INFO | experiment_nimber: 162
+config:{'global_settings': {'parallel_calculations': True, 'parallel_processes': 9, 'experiment_number': [161, 180]}}
+2026-08-12 23:46:23 | scripts.phi_function_approximation | INFO | u_max: 0.18144986220756218
+u_min:-0.43528530623772965
+ig: 0.5352853062377296
+2026-08-12 23:46:23 | scripts.phi_function_approximation | INFO | u_max: 0.18144986220756218
+u_min:-0.43528530623772965
+ig: 0.5352853062377296
+2026-08-12 23:46:23 | scripts.phi_function_approximation | INFO | u_max: 0.18144986220756218
+u_min:-0.43528530623772965
+ig: 0.5352853062377296
+2026-08-12 23:46:23 | scripts.phi_function_approximation | INFO | u_max: 0.18144986220756218
+u_min:-0.43528530623772965
+ig: 0.5352853062377296
+2026-08-12 23:46:23 | scripts.phi_function_approximation | INFO | u_max: 0.18144986220756218
+u_min:-0.43528530623772965
+ig: 0.5352853062377296
+2026-08-13 01:43:27 | scripts.phi_function_approximation | INFO | experiment_nimber: 163
+config:{'global_settings': {'parallel_calculations': True, 'parallel_processes': 9, 'experiment_number': [161, 180]}}
+2026-08-13 01:43:28 | scripts.phi_function_approximation | INFO | u_max: 0.18145550067337793
+u_min:-0.435288127289083
+ig: 0.535288127289083
+2026-08-13 01:43:28 | scripts.phi_function_approximation | INFO | u_max: 0.18145550067337793
+u_min:-0.435288127289083
+ig: 0.535288127289083
+2026-08-13 01:43:28 | scripts.phi_function_approximation | INFO | u_max: 0.18145550067337793
+u_min:-0.435288127289083
+ig: 0.535288127289083
+2026-08-13 01:43:28 | scripts.phi_function_approximation | INFO | u_max: 0.18145550067337793
+u_min:-0.435288127289083
+ig: 0.535288127289083
+2026-08-13 01:43:28 | scripts.phi_function_approximation | INFO | u_max: 0.18145550067337793
+u_min:-0.435288127289083
+ig: 0.535288127289083
+2026-08-13 03:11:54 | scripts.phi_function_approximation | ERROR | Experiment_163 could not be processed.
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+           ^^^^^^^^^^^^^^^^
+  File "/home/anton/OMI/scripts/phi_function_approximation.py", line 51, in testing_all_models_PHI_function
+    np.save(temp_path, np.array(Phi_))
+  File "/home/anton/OMI/venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 581, in save
+    format.write_array(fid, arr, allow_pickle=allow_pickle,
+  File "/home/anton/OMI/venv/lib/python3.12/site-packages/numpy/lib/format.py", line 754, in write_array
+    array.tofile(fp)
+OSError: Not enough free space to write 196599552 bytes
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anton/OMI/scripts/phi_function_approximation.py", line 136, in main
+    result = tuple(prll.map(calc_all_PHI_function,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+OSError: Not enough free space to write 196599552 bytes
