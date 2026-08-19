@@ -196,3 +196,66 @@ Models are automatically imported from the `models` folder if they correctly inh
 
 ### `errors`
 After calculating the phi-functions, the approximation errors are also saved. Where `all_p_errors` stores the approximation error for each candidate model and each polynomial degree, `min_error` stores the minimum error across all models and polynomial degrees, while `arg_p_min` stores the polynomial degree at which each candidate model achieved its minimum error.
+
+## Running the Project
+
+### Installation
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone [REPOSITORY_URL]
+cd [PROJECT_DIRECTORY]
+```
+
+Install the required Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Full End-to-End Pipeline
+
+Run the complete identification pipeline:
+
+```bash
+python main.py --all
+```
+
+In this mode, the stages are executed sequentially:
+
+```text
+Input data (HDF5)
+    ↓
+Derivative calculation
+    ↓
+Φ-function approximation
+    ↓
+Model selection
+    ↓
+Output
+```
+
+This runs all identification stages sequentially, from loading the input HDF5 file to the final model selection. The output result is an identified model for each processed time series.
+
+---
+
+### Run a Specific Stage
+
+If some stages have already been completed, a specific stage can be run separately:
+
+```bash
+python main.py --stage [STAGE]
+```
+
+> **[TODO: Specify real stage names.]**
+
+For example:
+
+```bash
+python main.py --stage derivatives
+```
+
+This allows the pipeline to continue from a specific stage without repeating calculations that have already been completed.
