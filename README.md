@@ -224,20 +224,6 @@ Run the complete identification pipeline:
 python main.py --all
 ```
 
-In this mode, the stages are executed sequentially:
-
-```text
-Input data (HDF5)
-    ↓
-Derivative calculation
-    ↓
-Φ-function approximation
-    ↓
-Model selection
-    ↓
-Output
-```
-
 This runs all identification stages sequentially, from loading the input HDF5 file to the final model selection. The output result is an identified model for each processed time series.
 
 ---
@@ -250,7 +236,10 @@ If some stages have already been completed, a specific stage can be run separate
 python main.py --stage [STAGE]
 ```
 
-> **[TODO: Specify real stage names.]**
+> **-deriv_calculation**
+> **phi_func_approx**
+> **optimal_model_identification**
+> **emperical_threshold**
 
 For example:
 
