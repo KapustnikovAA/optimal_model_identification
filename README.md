@@ -101,9 +101,9 @@ The directory also contains the Julia implementation used for optional Julia-bas
 Contains the main stages of the identification pipeline:
 
 * `derivative_calculations.py` — numerical derivative calculation.
-* `phi_function_approximation.py` — Φ-function approximation.
+* `phi_function_approximation.py` — phi-function approximation.
 * `model_selection.py` — candidate model selection.
-* `complexity_calculation.py` — [TODO: briefly describe its role].
+* `complexity_calculation.py` — сalculates the index of structural complexity of models.
 
 ---
 
