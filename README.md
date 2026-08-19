@@ -238,10 +238,8 @@ python main.py --stage [STAGE]
 **Available stages:**
 - deriv_calculation
 - phi_func_approx
-
-> **-optimal_model_identification**
-
-> **-emperical_threshold**
+- optimal_model_identification
+- emperical_threshold
 
 For example:
 
