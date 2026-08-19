@@ -1,7 +1,8 @@
 # optimal_model_identification
 A method for identifying systems of two ODEs from time series using only one measurable variable is proposed. Identification reduces to recovering a scalar function and selecting the best model. Applicable to models such as Lotka–Volterra, p53, FitzHugh–Nagumo, Morris-Lecar etc. 
 
-# General structure of HDF5-files
+## General structure of HDF5-files
+
 ```Full structure of file
         Experiment_number.h5
         │
@@ -17,7 +18,7 @@ A method for identifying systems of two ODEs from time series using only one mea
         │       │        **noise_sigma**: float|str}
         │       └── model_parameters --> type: Json_dict
         │
-        #├── **raw**
+        ├── **raw**
         │   ├── **t_series** --> shape: (number_time_points,), type: np.ndarray
         │   ├── **u_series** --> shape: (number_time_points,), type: np.ndarray
         │   └── v_series --> shape: (number_time_points,), type: np.ndarray
