@@ -107,10 +107,10 @@ def main (config_path: str,
             for exp_numb in exp_range:
                   hdf5_data = HDF5(path = "data", 
                                    exp_num = exp_numb)
-                  ts, us, _ = hdf5_data.load_group(group_name = "raw").values()
+                  raw_data = hdf5_data.load_group(group_name = "raw")
 
-                  t_series.append(ts)
-                  u_series.append(us)
+                  t_series.append(raw_data["t_series"])
+                  u_series.append(raw_data["u_series"])
                   window_size.append(window_size_choose(file_class = hdf5_data,
                                                         window_size_dict = window_size_dict))
 
