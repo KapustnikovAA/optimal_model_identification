@@ -291,11 +291,11 @@ Julia execution is controlled in the configuration file `configs/config_derivati
 
 ```yaml
 julia_mode: false
-julia_path: /usr/local/bin/julia
+julia_path: false
 ```
 
-By default, `julia_mode` is set to `false`, and the calculations are performed using Python.
-To enable Julia-based calculations, set `julia_mode` to `true` and specify the path to the Julia executable.
+By default, `julia_mode` and `julia_path` are set to `false`, and the calculations are performed using Python.
+To enable Julia-based calculations, set `julia_mode` to `true` and specify the path to the Julia executable (for example `"/usr/local/bin/julia"`).
 The exact path depends on the Julia installation.
 
 ---
