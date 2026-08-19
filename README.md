@@ -55,7 +55,7 @@ To run the identification pipeline from scratch, the file must contain the minim
             │
             ├── arg_P_min --> shape: (model,), type: np.ndarray
             └── all_P_errors --> shape: (model, poly_degree), type: np.ndarray
-
+```
 ### `raw`
 
 Contains the original time series data. Depending on the experiment, it may contain time, the main time series, and the time series of the second variable.
