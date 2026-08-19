@@ -1,6 +1,43 @@
 # optimal_model_identification
 A method for identifying systems of two ODEs from time series using only one measurable variable is proposed. Identification reduces to recovering a scalar function and selecting the best model. Applicable to models such as Lotka–Volterra, p53, FitzHugh–Nagumo, Morris-Lecar etc. 
 
+## Pipeline
+
+The identification pipeline takes an **HDF5 (`.h5`) experiment file** as input. The file must already contain the required time series and metadata needed for the identification procedure.
+
+The pipeline processes the experiment file through three sequential stages:
+
+```text
+HDF5 experiment file
+        ↓
+Read time series and metadata
+        ↓
+Numerical derivative calculation
+        ↓
+phi-function approximation
+        ↓
+Model selection
+        ↓
+Identified model + polynomial degree
+```
+### 1. Numerical Derivative Calculation
+
+The input HDF5 file is opened, and the required time series and metadata are read. Numerical derivatives are then calculated from the input time series.
+
+The results of this stage are **appended to the existing HDF5 file** without overwriting the original data.
+
+### 2. phi-function Approximation
+
+The calculated numerical derivatives are used to compute and approximate the phi-functions for the candidate models.
+
+The results of this stage are also **appended to the existing HDF5 file**.
+
+### 3. Model Selection
+
+The calculated phi-functions and approximation errors are used to compare the candidate models and select the most appropriate one.
+
+The final result is the **identified model** and the **polynomial degree** corresponding to the selected approximation.
+
 ## General structure of HDF5-files
 
 Each experiment file must have a name in the format:
