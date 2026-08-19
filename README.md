@@ -70,7 +70,7 @@ Experiment_0002.h5
 ...
 ```
 
-See [General structure of HDF5-files] for details.
+See **General structure of HDF5-files** for details.
 
 ---
 
