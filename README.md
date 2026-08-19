@@ -76,4 +76,4 @@ The group also contains the `model_pool` attribute. It is used for automatically
 
 Models are automatically imported from the `models` folder if they correctly inherit from the base class `GeneralSolver`. Therefore, to add a new model, you do not need to manually modify the model loading code.
 
-After calculating the phi-functions, the approximation errors are also saved, including the minimum error among the considered polynomials.
+After calculating the phi-functions, the approximation errors are also saved. Where `all_p_errors` stores the approximation error for each candidate model and each polynomial degree, `min_error` stores the minimum error across all models and polynomial degrees, while `arg_p_min` stores the polynomial degree at which each candidate model achieved its minimum error.
