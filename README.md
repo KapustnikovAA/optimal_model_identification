@@ -287,7 +287,7 @@ Any suitable number of processes can be specified depending on the available har
 
 The numerical derivative calculation can also be performed using Julia.
 
-Julia execution is controlled by:
+Julia execution is controlled in the configuration file `configs/config_derivatives.yaml` by:
 
 ```yaml
 julia_mode: false
