@@ -38,6 +38,58 @@ The calculated phi-functions and approximation errors are used to compare the ca
 
 The final result is the **identified model** and the **polynomial degree** corresponding to the selected approximation.
 
+## Running the Project
+
+### Installation
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com/KapustnikovAA/optimal_model_identification
+cd optimal_model_identification
+```
+
+Install the required Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Full End-to-End Pipeline
+
+Run the complete identification pipeline:
+
+```bash
+python main.py --all
+```
+
+This runs all identification stages sequentially, from loading the input HDF5 file to the final model selection. The output result is an identified model for each processed time series.
+
+---
+
+### Run a Specific Stage
+
+If some stages have already been completed, a specific stage can be run separately:
+
+```bash
+python main.py --stage [STAGE]
+```
+**Available stages:**
+- deriv_calculation
+- phi_func_approx
+- optimal_model_identification
+- emperical_threshold
+
+For example:
+
+```bash
+python main.py --stage deriv_calculation
+```
+
+This allows the pipeline to continue from a specific stage without repeating calculations that have already been completed.
+
 ## Project Structure
 
 ### `analysis/`
@@ -196,55 +248,3 @@ Models are automatically imported from the `models` folder if they correctly inh
 
 ### `errors`
 After calculating the phi-functions, the approximation errors are also saved. Where `all_p_errors` stores the approximation error for each candidate model and each polynomial degree, `min_error` stores the minimum error across all models and polynomial degrees, while `arg_p_min` stores the polynomial degree at which each candidate model achieved its minimum error.
-
-## Running the Project
-
-### Installation
-
-Clone the repository and navigate to the project directory:
-
-```bash
-git clone https://github.com/KapustnikovAA/optimal_model_identification
-cd optimal_model_identification
-```
-
-Install the required Python dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### Full End-to-End Pipeline
-
-Run the complete identification pipeline:
-
-```bash
-python main.py --all
-```
-
-This runs all identification stages sequentially, from loading the input HDF5 file to the final model selection. The output result is an identified model for each processed time series.
-
----
-
-### Run a Specific Stage
-
-If some stages have already been completed, a specific stage can be run separately:
-
-```bash
-python main.py --stage [STAGE]
-```
-**Available stages:**
-- deriv_calculation
-- phi_func_approx
-- optimal_model_identification
-- emperical_threshold
-
-For example:
-
-```bash
-python main.py --stage deriv_calculation
-```
-
-This allows the pipeline to continue from a specific stage without repeating calculations that have already been completed.
