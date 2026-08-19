@@ -262,3 +262,58 @@ If you are using experimental time series, the structure of the HDF5 file must s
     and
    
  - `file["metadata"].attrs["integation_parameters"]["noise_sigma"] = "unknown"`
+
+## Parallel Computing
+
+### Numerical Derivative Calculation
+
+The numerical derivative calculation stage (`deriv_calculation`) supports parallel execution.
+
+Parallelization can be enabled or disabled in the configuration file `configs/config_derivatives.yaml` using:
+
+```yaml
+parallel_calculations: true
+```
+
+The number of parallel processes can be configured using:
+
+```yaml
+parallel_processes: 9
+```
+
+Any suitable number of processes can be specified depending on the available hardware.
+
+#### Julia Support
+
+The numerical derivative calculation can also be performed using Julia.
+
+Julia execution is controlled by:
+
+```yaml
+julia_mode: false
+julia_path: /usr/local/bin/julia
+```
+
+By default, `julia_mode` is set to `false`, and the calculations are performed using Python.
+To enable Julia-based calculations, set `julia_mode` to `true` and specify the path to the Julia executable.
+The exact path depends on the Julia installation.
+
+---
+
+### phi-function Approximation
+
+The phi-function approximation stage (`phi_func_approx`) also supports parallel execution.
+
+Parallelization can be enabled or disabled in the configuration file `configs/config_approximation.yaml` using:
+
+```yaml
+parallel_calculations: true
+```
+
+The number of parallel processes can be configured using:
+
+```yaml
+parallel_processes: 9
+```
+
+The number of processes is limited to **9**, since the approximation is performed for nine polynomial degrees. If a value greater than 9 is specified, the number of processes is limited internally to 9.
