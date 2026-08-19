@@ -255,8 +255,8 @@ If you are using experimental time series, the structure of the HDF5 file must s
 
 * **Metadata Nesting:** Inside the file, the `"metadata"` group (within its `attrs` attributes) must contain the `"integation_parameters"` dictionary.
 * Within this dictionary, the value for the `model` key must be set to the string value `"unknown"`.
-* Within this dictionary, the value for the `noise_sigmakey must be set to the string value `"unknown"`.
-* **Parameter Path Example:** 
-  `file["metadata"].attrs["integation_parameters"]["model"] = "unknown"`
-  and
-  `file["metadata"].attrs["integation_parameters"]["noise_sigma"] = "unknown"`
+* Within this dictionary, the value for the `noise_sigmakey` must be set to the string value `"unknown"`.
+* **Parameter Path Example:**
+ - `file["metadata"].attrs["integation_parameters"]["model"] = "unknown"`
+    and
+ - `file["metadata"].attrs["integation_parameters"]["noise_sigma"] = "unknown"`
