@@ -237,14 +237,14 @@ python main.py --stage [STAGE]
 ```
 
 > **-deriv_calculation**
-> **phi_func_approx**
-> **optimal_model_identification**
-> **emperical_threshold**
+> **-phi_func_approx**
+> **-optimal_model_identification**
+> **-emperical_threshold**
 
 For example:
 
 ```bash
-python main.py --stage derivatives
+python main.py --stage deriv_calculation
 ```
 
 This allows the pipeline to continue from a specific stage without repeating calculations that have already been completed.
