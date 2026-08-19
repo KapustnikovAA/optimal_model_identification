@@ -204,8 +204,8 @@ After calculating the phi-functions, the approximation errors are also saved. Wh
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone [REPOSITORY_URL]
-cd [PROJECT_DIRECTORY]
+git clone https://github.com/KapustnikovAA/optimal_model_identification
+cd optimal_model_identification
 ```
 
 Install the required Python dependencies:
@@ -237,6 +237,7 @@ python main.py --stage [STAGE]
 ```
 
 > **-deriv_calculation**
+
 > **-phi_func_approx**
 > **-optimal_model_identification**
 > **-emperical_threshold**
