@@ -5,21 +5,21 @@ A method for identifying systems of two ODEs from time series using only one mea
 ```Full structure of file
         Experiment_number.h5
         │
-        ├── metadata
-        │   └── attrs
-        │       ├── integation_parameters --> type: Json_dict
-        │       │   └── {'model': str, 
-        │       │        'solver': str,
-        │       │        'N': int,
-        │       │        'Ntrans': int,
-        │       │        'dt': float,
-        │       │        'max_step': float,
-        │       │        'noise_sigma': float}
+        ├── **metadata**
+        │   └── **attrs**
+        │       ├── **integation_parameters** --> type: Json_dict
+        │       │   └── {**model**: str, 
+        │       │        solver: str,
+        │       │        **N**: int,
+        │       │        Ntrans: int,
+        │       │        **dt**: float,
+        │       │        max_step: float,
+        │       │        **noise_sigma**: float|str}
         │       └── model_parameters --> type: Json_dict
         │
         ├── **raw**
-        │   **├── t_series --> shape: (number_time_points,), type: np.ndarray**
-        │   ├── u_series --> shape: (number_time_points,), type: np.ndarray
+        │   ├── **t_series** --> shape: (number_time_points,), type: np.ndarray
+        │   ├── **u_series** --> shape: (number_time_points,), type: np.ndarray
         │   └── v_series --> shape: (number_time_points,), type: np.ndarray
         │
         ├── derivatives
@@ -46,4 +46,3 @@ A method for identifying systems of two ODEs from time series using only one mea
             │
             ├── arg_P_min --> shape: (model,), type: np.ndarray
             └── all_P_errors --> shape: (model, poly_degree), type: np.ndarray
-        ```
