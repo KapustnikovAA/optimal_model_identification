@@ -3,3 +3,4 @@ h5py==3.14.0
 scipy==1.15.2
 matplotlib==3.10.0
 PyYAML==6.0.2
+julia==0.6.2
