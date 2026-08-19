@@ -320,14 +320,14 @@ The number of processes is limited to **9**, since the approximation is performe
 
 ## Adding a New Model
 
-The project allows new mathematical models to be added without modifying the main identification pipeline.
+The project allows new mathematical models to be added without modifying the main identification pipeline. 
+**Note:** The only mandatory manual modification required is in the `scripts/complexity_calculation.py` file. You will need to explicitly update it with the specific formula `(16)` from the preprint (https://www.researchgate.net/publication/400471213_Identification_of_models_described_by_two_differential_equations_from_one_scalar_time_series) to correctly calculate and output the structural complexity index for your new model.
 
 The general structure is:
 
 ```text
-Base algorithm / solver
-            ↑
-            │
+basic_algorithms_class / General_Solver
+            🠉
         New model
 ```
 
@@ -339,9 +339,8 @@ To add a new model:
 4. Define the required model parameters.
 5. Define the required reconstruct_coefficients function.
 6. Define the required phi_analytical function.
-7. Implement all other required methods and attributes.
-8. Add or update the corresponding configuration if necessary.
-9. Verify that the model can be integrated numerically and processed by the identification pipeline.
+7. Add or update the corresponding configuration if necessary.
+8. Verify that the model can be integrated numerically and processed by the identification pipeline.
 
 Models placed in the `models/` directory are automatically imported if they correctly implement the required interface.
 
