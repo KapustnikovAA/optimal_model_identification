@@ -317,3 +317,96 @@ parallel_processes: 9
 ```
 
 The number of processes is limited to **9**, since the approximation is performed for nine polynomial degrees. If a value greater than 9 is specified, the number of processes is limited internally to 9.
+
+## Adding a New Model
+
+The project allows new mathematical models to be added without modifying the main identification pipeline.
+
+The general structure is:
+
+```text
+Base algorithm / solver
+            ↑
+            │
+        New model
+```
+
+To add a new model:
+
+1. Create a model class.
+2. Inherit it from the required base class `General_Solver` from `models.basic_algorithms_class`.
+3. Define the system of differential equations.
+4. Define the required model parameters.
+5. Define the required reconstruct_coefficients function.
+6. Define the required phi_analytical function.
+7. Implement all other required methods and attributes.
+8. Add or update the corresponding configuration if necessary.
+9. Verify that the model can be integrated numerically and processed by the identification pipeline.
+
+Models placed in the `models/` directory are automatically imported if they correctly implement the required interface.
+
+### Example Model
+
+```text
+class New_model(General_Solver):
+    """
+    Default attributes:\n
+        self.method = "RK45"
+        self.max_step  = 2**-5\n
+    """
+    def __init__(self, 
+                 N: int = 10000, 
+                 Ntrans: int = 5000, 
+                 dt: float = 2 ** -10, 
+                 window: int = 5, 
+                 poly_degree: float = 4) -> None:
+         super().__init__(N, Ntrans, dt, window, poly_degree)
+         self.model_name = "new_model"
+
+    def ODE_equations (self, 
+                       t: np.ndarray, 
+                       initial_vectors: np.ndarray, 
+                       param_1: float, 
+                       param_2: float, 
+                       ...,
+                       param_n: float) -> np.ndarray:
+        """
+        Name of parameters: \n
+        \tparam_1 = float; param_2 = float; ...; param_n = float
+        """
+        u, v = initial_vectors[::2], initial_vectors[1::2]
+
+        dl = np.empty(2)
+
+        dl[0] = ...
+        dl[1] = ...
+        
+        return dl
+
+    def __call__(self, **kwargs):
+        return self.ODE_solver({**kwargs, "order": ("param_1", "param_2", ..., "param_n")})
+
+    def reconstruct_coefficients (self, 
+                                  Series: np.ndarray, 
+                                  Vector: np.ndarray) -> np.ndarray:
+        """Result --- approximation coefficients\n 
+        for Φ_analytical(u) by least square method"""
+
+        coef = ...
+        
+        return coef
+    
+    def phi_analytical (self, 
+                        c: np.ndarray, 
+                        Series: np.ndarray) -> np.ndarray:
+        """
+        Φ(u) --- analytical function for FitzHugh-Nagumo model\n
+        c --- coefficients of model\n
+        Series --- variable of model 
+        """
+        return ...
+
+    def help(self) -> None:
+        print("New_model(param_1 = 0.1, param_2 = 12, ..., param_n= -0.87, x0 = np.array([1.0, 1.0]))")
+        print("N = 400000, dt = 2**-10, Ntrans = 5000")
+```
