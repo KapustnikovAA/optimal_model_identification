@@ -17,8 +17,8 @@ A method for identifying systems of two ODEs from time series using only one mea
         │       │        'noise_sigma': float}
         │       └── model_parameters --> type: Json_dict
         │
-        ├── raw
-        │   ├── t_series --> shape: (number_time_points,), type: np.ndarray
+        ├── **raw**
+        │   **├── t_series --> shape: (number_time_points,), type: np.ndarray**
         │   ├── u_series --> shape: (number_time_points,), type: np.ndarray
         │   └── v_series --> shape: (number_time_points,), type: np.ndarray
         │
