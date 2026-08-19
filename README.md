@@ -135,13 +135,13 @@ To run the identification pipeline from scratch, the file must contain the minim
         ├── **metadata**
         │   └── **attrs**
         │       ├── **integation_parameters** --> type: Json_dict
-        │       │   └── {**model**: str, 
+        │       │   └── {**model**: str = "unknown", 
         │       │        solver: str,
         │       │        **N**: int,
         │       │        Ntrans: int,
         │       │        **dt**: float,
         │       │        max_step: float,
-        │       │        **noise_sigma**: float|str}
+        │       │        **noise_sigma**: float|str = "unknown"}
         │       └── model_parameters --> type: Json_dict
         │
         ├── **raw**
