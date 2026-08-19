@@ -2,7 +2,6 @@ import sys
 from utils.yaml_loader import load_yaml
 
 from analysis.time_series_generation import main as ts_generation
-from analysis.load_test import main as data_load
 from analysis.emperical_threshold import accuracy_curve_calculation as emperical_threshold
 
 from scripts.derivative_calculations import main as deriv_calculation
