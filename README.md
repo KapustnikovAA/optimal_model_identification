@@ -9,7 +9,7 @@ Each experiment file must have a name in the format:
 
 where `XXXX` is a four‑digit experiment number, for example `Experiment_0000.h5`.
 
-To run the identification pipeline from scratch, the file must contain the minimum required structure, highlighted in **bold** in the diagram below.
+To run the identification pipeline from scratch, the file must contain the minimum required structure, highlighted in ** ** in the diagram below.
 
 ```Full structure of file
         Experiment_number.h5
