@@ -38,6 +38,87 @@ The calculated phi-functions and approximation errors are used to compare the ca
 
 The final result is the **identified model** and the **polynomial degree** corresponding to the selected approximation.
 
+## Project Structure
+
+### `analysis/`
+
+Contains auxiliary scripts that are **not required for the end-to-end identification pipeline**.
+
+These scripts are used for additional analysis, empirical calculations, visualization, validation, and generation of additional time series.
+
+---
+
+### `configs/`
+
+Contains YAML configuration files for the project.
+
+* `pipeline.yaml` — the main configuration file used to control the identification pipeline.
+* Other configuration files define parameters for individual pipeline stages.
+
+---
+
+### `data/`
+
+Contains experiment data, primarily HDF5 (`.h5`) files.
+
+Experiment files must follow the naming convention:
+
+```text
+Experiment_0000.h5
+Experiment_0001.h5
+Experiment_0002.h5
+...
+```
+
+See [General structure of HDF5-files] for details.
+
+---
+
+### `images/`
+
+Contains generated plots and other visualizations.
+
+---
+
+### `logs/`
+
+Contains execution logs generated during the calculations.
+
+---
+
+### `models/`
+
+Contains the dynamical system models, base classes, and Julia code used for numerical calculations.
+
+Each specific model inherits from the corresponding base class and defines the equations and parameters required for its numerical integration.
+
+The directory also contains the Julia implementation used for optional Julia-based computations.
+
+---
+
+### `scripts/`
+
+Contains the main stages of the identification pipeline:
+
+* `derivative_calculations.py` — numerical derivative calculation.
+* `phi_function_approximation.py` — Φ-function approximation.
+* `model_selection.py` — candidate model selection.
+* `complexity_calculation.py` — [TODO: briefly describe its role].
+
+---
+
+### `utils/`
+
+Contains auxiliary components used by the pipeline:
+
+* YAML configuration loading;
+* HDF5 file management;
+* automatic model importing;
+* logging;
+* temporary disk-based caching.
+
+The temporary cache is used to store intermediate results on disk and reduce RAM usage when processing large time series. It is removed after the corresponding computation is completed.
+
 ## General structure of HDF5-files
 
 Each experiment file must have a name in the format:
