@@ -1,5 +1,6 @@
 import numpy as np
 from numpy.linalg import lstsq as MNK
+from scipy.linalg import lstsq as MNK_polydiff
 
 from scipy import integrate
 from scipy.integrate import solve_ivp
@@ -155,7 +156,7 @@ class General_Solver:
 
         # По всем точкам:
         for n in range(len(x) - 2 * m2):
-            dx[n, :] = MNK(Phi, x[n: n + m], rcond = None)[0]
+            dx[n, :] = MNK_polydiff(Phi, x[n: n + m], lapack_driver = 'gelsy')[0]
 
         # Масштабируем:
         for k in range(1, P + 1):
