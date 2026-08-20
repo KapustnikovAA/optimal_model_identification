@@ -90,6 +90,10 @@ python main.py --stage deriv_calculation
 
 This allows the pipeline to continue from a specific stage without repeating calculations that have already been completed.
 
+### Note
+
+Works with Python 3.12 and above. Julia 1.11.4 or later is also required for the Julia-based calculations.
+
 ## Project Structure
 
 ### `analysis/`
