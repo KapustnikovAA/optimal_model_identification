@@ -92,7 +92,7 @@ This allows the pipeline to continue from a specific stage without repeating cal
 
 ### Note
 
-Works with Python 3.12 and above. Julia 1.11.4 or later is also required for the Julia-based calculations.
+Works with `Python 3.12` and above. `Julia 1.11.4` or later is also required for the Julia-based calculations.
 
 ## Project Structure
 
